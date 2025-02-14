@@ -9,6 +9,7 @@ class Search {
     init () {
         this.watchUserInput ()
         this.getCities ()
+        this.getInputSuggestion ()
     
     }
     watchUserInput () {
@@ -57,7 +58,21 @@ class Search {
         console.log (cityData)
         return cityData
     }
+    getInputSuggestion () {
+        this.input.addEventListener ('keyup', (event)=> {
+            const input= this.input.value
+            console.log (input)
+            const result = this.cities.filter(item=>item.city.toLowerCase().startsWith(input.toLowerCase()))
+            console.log (result)
+            let suggestion =''
+            if (input!=""){
+                result.forEach (resultItem =>
+                    suggestion+= `<div class="suggestion">${resultItem.city}</div>`)}
 
+            document.getElementById('suggestion').innerHTML=suggestion
+        })
+       
+    }
 }
 
 export { Search }

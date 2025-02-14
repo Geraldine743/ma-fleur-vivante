@@ -7,13 +7,16 @@
     <title>Ma fleur vivante</title>
 </head>
 <body>
-    <form class="search-form js-search-form">
-        <Label>
-            Taper le nom d'une ville française :
-            <input type="text" class="js-search-input">
-        </Label>
-        <button type="submit" class="button">Valider</button>
-    </form>
+    <div class="container">
+        <form class="search-form js-search-form">
+            <Label class="search-label">
+                Taper le nom d'une ville française :
+                <input type="text" class="search-input js-search-input">
+            </Label>
+            <button type="submit" class="button">Valider</button>
+        </form>
+    </div>
+    <div id="suggestion"></div>
     <script type="module" src="app.js"></script>
 </body>
 </html>
