@@ -1,0 +1,14 @@
+body {
+    background-color: #D1E9F6;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px
+}
+
+.button {
+    background-color:#F1D3CE;
+    border-radius: 15%;
+}
