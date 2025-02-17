@@ -24,7 +24,6 @@ class Search {
         if (cityData) {
             const lat = cityData.lat
             const long = cityData.lng
-            console.log (lat,long)
         }else{
             alert ("La ville renseignée n'existe pas ou n'est pas disponible")
         }  
@@ -36,7 +35,7 @@ class Search {
             .then ( data => {
                 this.cities = data
             })
-    }
+    }ß
 
     /*getCityData (cityName) {
         let cityData = {}
@@ -55,15 +54,12 @@ class Search {
     getCityData (cityName) {
         const cityNameLower = cityName.toLowerCase ()
         const cityData = this.cities.find ((cityObject)=>cityObject.city.toLowerCase ()=== cityNameLower)
-        console.log (cityData)
         return cityData
     }
     getInputSuggestion () {
         this.input.addEventListener ('keyup', (event)=> {
             const input= this.input.value
-            console.log (input)
             const result = this.cities.filter(item=>item.city.toLowerCase().startsWith(input.toLowerCase()))
-            console.log (result)
             let suggestion =''
             if (input!=""){
                 result.forEach (resultItem =>
