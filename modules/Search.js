@@ -1,3 +1,4 @@
+import { Wind } from './Wind.js'
 class Search {
     constructor () {
         this.input=document.querySelector ('.js-search-input')
@@ -24,6 +25,7 @@ class Search {
         if (cityData) {
             const lat = cityData.lat
             const long = cityData.lng
+            new Wind ({lat,long})
         }else{
             alert ("La ville renseignée n'existe pas ou n'est pas disponible")
         }  
@@ -35,7 +37,7 @@ class Search {
             .then ( data => {
                 this.cities = data
             })
-    }ß
+    }
 
     /*getCityData (cityName) {
         let cityData = {}
