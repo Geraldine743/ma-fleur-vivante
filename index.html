@@ -7,6 +7,8 @@
     <title>Ma fleur vivante</title>
 </head>
 <body>
+    <div class="canvas js-canvas"></div>
+    
     <div class="container">
         <form class="search-form js-search-form">
             <Label class="search-label">
@@ -19,5 +21,13 @@
     </div>
     
     <script type="module" src="app.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.173.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.173.0/examples/jsm/"
+          }
+        }
+      </script>
 </body>
 </html>

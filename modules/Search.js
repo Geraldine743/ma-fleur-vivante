@@ -17,6 +17,7 @@ class Search {
         this.form.addEventListener ('submit', (event)=> {
             event.preventDefault ()
             this.getLatLong ()
+            this.form.reset ()
         })
     }
     getLatLong () {
@@ -37,7 +38,7 @@ class Search {
             .then ( data => {
                 this.cities = data
             })
-    }
+        }
 
     /*getCityData (cityName) {
         let cityData = {}
