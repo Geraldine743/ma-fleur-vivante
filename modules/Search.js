@@ -28,6 +28,7 @@ class Search {
             const long = cityData.lng
             new Wind ({lat,long})
             window.app.city=cityName
+            window.app.resetAnimation = true
         }else{
             alert ("La ville renseignée n'existe pas ou n'est pas disponible")
         }  

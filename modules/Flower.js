@@ -5,6 +5,10 @@ class Flower {
         this.canvas=document.querySelector('.js-canvas')
         this.canvasWidth=window.innerWidth
         this.canvasHeight=window.innerHeight
+        this.animation = {
+            rotationX : 0,
+            rotationZ : 0
+        }
 
         this.init ()
     }
@@ -95,6 +99,26 @@ animate() {
 	requestAnimationFrame( this.animate.bind(this) )
 	this.renderer.render( this.scene, this.camera )
     this.controls.update ()
+
+    if (window.app.city=== ""){
+        this.groupOfFlower.rotation.y += 0.01
+    }
+    else{
+        if (window.app.resetAnimation){
+            this.animation.rotationX = 0
+            this.animation.rotationZ = 0
+            window.app.resetAnimation = false
+        }
+        else {
+            if ( this.animation.rotationX < (window.app.windDirection-180) && this.animation.rotationZ < (window.app.windDirection-180)) {
+                const speed = 0.007*window.app.windSpeed
+                this.animation.rotationX += speed
+                this.animation.rotationZ += speed
+            }
+        }
+        this.groupOfFlower.rotation.x = THREE.MathUtils.degToRad(this.animation.rotationX)
+        this.groupOfFlower.rotation.z = THREE.MathUtils.degToRad(this.animation.rotationZ)
+    }
 }
 
 
