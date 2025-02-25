@@ -14,4 +14,9 @@
     --BONUS : actualiser mes données toutes les 15 minutes
     
 
-##Creation de la fleur en theejs. 
+##Creation de la fleur en threejs. 
+
+##Animation de la fleur:
+    -- Si aucune ville n'est selectionnée, la fleur tourne sur elle-même.
+    -- Si une ville est selectionnée , la fleur s'oriente en fonction des données de l'API.
+    -- On crée un objet "app" dans la variable window qui va permettre d'enregistrer les infos necessaires à l'animation de la fleur.

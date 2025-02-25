@@ -26,6 +26,8 @@ class Wind {
         fetch (this.url)
             .then (Response => Response.json())
             .then ( data => {
+                window.app.windDirection = data.current.wind_direction_10m
+                window.app.windSpeed = data.current.wind_speed_10m
             })
     }
 }
